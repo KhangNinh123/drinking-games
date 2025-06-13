@@ -252,3 +252,7 @@ p {
   display: block;
   animation: fade-in-bg 0.5s forwards;
 }
+
+.cart-img:hover {
+  content: url('../public/cart_hover.png');
+}

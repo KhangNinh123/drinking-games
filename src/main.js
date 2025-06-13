@@ -52,4 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.modal-desc').style.opacity = 0;
         }
     };
+    // Thêm sự kiện click cho icon cart
+    var cartImg = document.querySelector('.cart-img');
+    if(cartImg) {
+        cartImg.addEventListener('click', function() {
+            window.open('https://shopee.vn/masoi.vn?categoryId=100639&entryPoint=ShopByPDP&itemId=23668389652', '_blank');
+        });
+    }
 });
