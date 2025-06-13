@@ -222,3 +222,33 @@ p {
 .overflow-y-auto::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.8);
 }
+
+.modal-marquee {
+  display: inline-block;
+  min-width: 100%;
+  padding-left: 40px;
+}
+@keyframes marquee {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.bg-vt-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../public/bg_vt.png') center center/cover no-repeat;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+.bg-vt-overlay.active {
+  display: block;
+  animation: fade-in-bg 0.5s forwards;
+}

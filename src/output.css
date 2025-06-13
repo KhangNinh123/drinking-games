@@ -571,6 +571,30 @@ video {
   position: relative;
 }
 
+.bottom-\[5px\] {
+  bottom: 5px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.-mt-20 {
+  margin-top: -5rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -583,12 +607,20 @@ video {
   max-height: 400px;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
 .w-\[720px\] {
   width: 720px;
 }
 
 .w-\[860px\] {
   width: 860px;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .flex-col {
@@ -603,16 +635,20 @@ video {
   justify-content: flex-start;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .bg-\[url\(\'\.\.\/public\/modal\.png\'\)\] {
@@ -638,6 +674,11 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-pink-500 {
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity, 1));
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
@@ -943,4 +984,45 @@ p {
 
 .overflow-y-auto::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.8);
+}
+
+.modal-marquee {
+  display: inline-block;
+  min-width: 100%;
+  padding-left: 40px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.bg-vt-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../public/bg_vt.png') center center/cover no-repeat;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+.bg-vt-overlay.active {
+  display: block;
+  animation: fade-in-bg 0.5s forwards;
 }
