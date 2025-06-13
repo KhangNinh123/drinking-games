@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: '1FTV-Designer';
+  src: url('../public/font/1FTV-Designer.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FVF Fernando 08';
+  src: url('../public/font/FVF Fernando 08.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-1ftv {
+  font-family: '1FTV-Designer', Arial, sans-serif;
+}
+
+.font-fernando {
+  font-family: 'FVF Fernando 08', Arial, sans-serif;
+}
+
+body {
+ 
+  height: 100vh;
+  background-image: url('../public/bg.png');;
+    background-size: cover;
+    font-family: '1FTV-Designer', Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Lớp phủ đen mờ */
+    z-index: 1;
+}
+
+/* Nội dung chính */
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Responsive cho thiết bị di động */
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+.corner-art {
+    position: fixed;
+    right: 500px;
+    bottom: 80px;
+    z-index: 10;
+    width: 450px;
+    pointer-events: auto;
+    transition: opacity 0.2s;
+}
+.corner-art:hover {
+    content: url('../public/art1_hover.png');
+}
+.corner-art2 {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    z-index: 10;
+    width: 540px;
+    pointer-events: auto;
+    transition: opacity 0.2s;
+}
+.corner-art2:hover {
+    content: url('../public/art2_hover.png');
+}
+.modal-bg {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-bg.active {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: center;      /* Căn giữa theo trục Y */
+
+}
+.modal-img {
+    width: 80vw;
+    max-width: 900px;
+    margin-left: 40px;
+    margin-top: 0;
+    animation: slide-in-left 0.5s cubic-bezier(.68,-0.55,.27,1.55) both;
+    border-radius: 16px;
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.bg-sg-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../public/bg_sg.png') center center/cover no-repeat;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    animation: none;
+}
+.bg-sg-overlay.active {
+    display: block;
+    animation: fade-in-bg 0.5s forwards;
+}
+@keyframes fade-in-bg {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal-desc {
+    position: absolute;
+    max-width: 830px;
+    color: white;
+    font-size: 23.0px;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    line-height: 1.5;
+    text-align: left;
+    font-family: '1FTV-Designer', 'Segoe UI', Arial, sans-serif;
+    z-index: 2;
+    pointer-events: auto;
+    opacity: 0;
+    transition: opacity 0.4s;
+    max-height: calc(1.1rem * 1.5 * 14); /* 14 dòng, line-height 1.5 */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #0075fd transparent;
+}
+.modal-desc::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+.modal-desc::-webkit-scrollbar-thumb {
+    background: #0075fd;
+    border-radius: 8px;
+}
+.modal-desc::-webkit-scrollbar-thumb:hover {
+    background: #005bbd;
+}
+.marquee-box {
+    width: 560px;
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    bottom: 200px;
+    transform: translateX(-50%);
+    z-index: 2000;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    color: #0075fd;
+    font-family: 'Fernando08', Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    animation: marquee-right 10s linear infinite;
+}
+@keyframes marquee-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
