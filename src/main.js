@@ -2,20 +2,27 @@ function showModalWithOverlay() {
     const overlay = document.getElementById('bg-sg-overlay');
     const modal = document.getElementById('modal-bg');
     const desc = document.querySelector('.modal-desc');
+    
+    // Show overlay first
     overlay.classList.add('active');
+    // Show modal after a short delay
     setTimeout(() => {
         modal.classList.add('active');
         setTimeout(() => {
-            desc.style.opacity = 1;
-        }, 800);
-    }, 500);
+            if (desc) desc.style.opacity = 1;
+        }, 500);
+    }, 600); // 600ms delay for overlay
 }
 
 function showModal() {
+    // Show background immediately
     document.getElementById('modal-bg').classList.add('active');
+    
+    // Make description visible after the animation completes
     setTimeout(() => {
-        document.querySelector('.modal-desc').style.opacity = 1;
-    }, 2000);
+        const desc = document.querySelector('.modal-desc');
+        if (desc) desc.style.opacity = 1;
+    }, 400);
 }
 
 document.addEventListener('DOMContentLoaded', function() {

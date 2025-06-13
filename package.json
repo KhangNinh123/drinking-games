@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "3"
   }
 }
