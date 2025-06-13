@@ -558,12 +558,114 @@ video {
   position: absolute;
 }
 
-.relative {
-  position: relative;
+.ml-3 {
+  margin-left: 0.75rem;
 }
 
 .flex {
   display: flex;
+}
+
+.size-6 {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.h-\[530px\] {
+  height: 530px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-\[400px\] {
+  height: 400px;
+}
+
+.h-\[600px\] {
+  height: 600px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-\[600px\] {
+  width: 600px;
+}
+
+.w-\[000px\] {
+  width: 000px;
+}
+
+.w-\[900px\] {
+  width: 900px;
+}
+
+.w-\[830px\] {
+  width: 830px;
+}
+
+.w-\[820px\] {
+  width: 820px;
+}
+
+.max-w-\[900px\] {
+  max-width: 900px;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.bg-\[url\(\'\.\.\/public\/modal\.jpg\'\)\] {
+  background-image: url('../public/modal.jpg');
+}
+
+.bg-\[url\(\'\.\.\/public\/modal\.png\'\)\] {
+  background-image: url('../public/modal.png');
+}
+
+.bg-\[url\(\'\.\.\/src\/img\/modal\.jpg\'\)\] {
+  background-image: url('../src/img/modal.jpg');
+}
+
+.bg-\[url\(\'\.\.\/src\/modal\.jpg\'\)\] {
+  background-image: url('../src/modal.jpg');
+}
+
+.bg-\[url\(\'\.\.\/src\/modal\.png\'\)\] {
+  background-image: url('../src/modal.png');
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 @font-face {
@@ -692,18 +794,18 @@ p {
 
 .modal-bg.active {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  /* Căn giữa theo trục Y */
+  justify-content: flex-start;
 }
 
 .modal-img {
   width: 80vw;
   max-width: 900px;
-  margin-left: 40px;
-  margin-top: 0;
-  animation: slide-in-left 0.5s cubic-bezier(.68,-0.55,.27,1.55) both;
   border-radius: 16px;
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.5s cubic-bezier(.68,-0.55,.27,1.55) both;
 }
 
 @keyframes slide-in-left {
@@ -790,39 +892,4 @@ p {
   background: #005bbd;
 }
 
-.marquee-box {
-  width: 560px;
-  overflow: hidden;
-  position: fixed;
-  left: 50%;
-  bottom: 200px;
-  transform: translateX(-50%);
-  z-index: 2000;
-  background: none;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: none;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.marquee-text {
-  display: inline-block;
-  white-space: nowrap;
-  color: #0075fd;
-  font-family: 'Fernando08', Arial, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  animation: marquee-right 10s linear infinite;
-}
-
-@keyframes marquee-right {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
-}
 

@@ -113,16 +113,15 @@ p {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    align-items: center;      /* Căn giữa theo trục Y */
-
 }
 .modal-img {
     width: 80vw;
     max-width: 900px;
-    margin-left: 40px;
-    margin-top: 0;
-    animation: slide-in-left 0.5s cubic-bezier(.68,-0.55,.27,1.55) both;
     border-radius: 16px;
+}
+
+.slide-in-left {
+    animation: slide-in-left 0.5s cubic-bezier(.68,-0.55,.27,1.55) both;
 }
 @keyframes slide-in-left {
     0% {
@@ -189,32 +188,5 @@ p {
 .modal-desc::-webkit-scrollbar-thumb:hover {
     background: #005bbd;
 }
-.marquee-box {
-    width: 560px;
-    overflow: hidden;
-    position: fixed;
-    left: 50%;
-    bottom: 200px;
-    transform: translateX(-50%);
-    z-index: 2000;
-    background: none;
-    border-radius: 0;
-    padding: 0;
-    box-shadow: none;
-    opacity: 0;
-    transition: opacity 0.4s;
-}
-.marquee-text {
-    display: inline-block;
-    white-space: nowrap;
-    color: #0075fd;
-    font-family: 'Fernando08', Arial, sans-serif;
-    font-size: 14px;
-    letter-spacing: 1px;
-    animation: marquee-right 10s linear infinite;
-}
-@keyframes marquee-right {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
+
 
