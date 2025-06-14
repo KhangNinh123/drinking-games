@@ -250,3 +250,66 @@ p {
 .cart-img:hover {
   content: url('../public/cart_hover.png');
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1.25);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.25);
+    }
+    100% {
+        transform: translateY(0) scale(1.25);
+    }
+}
+
+.char-animation {
+    animation: fadeIn 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.char-animation.fade-complete {
+    animation: float 3s ease-in-out infinite;
+}
+
+.char-animation:hover {
+    animation-play-state: paused;
+    transform: scale(1.5);
+}
+
+/* Card slider styles */
+.card-slider {
+    position: fixed;
+    right: 240px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+    width: 330px;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.card-slider.hidden {
+    display: none;
+}
+
+.swiper-slide img {
+    width: 325px;
+    height: 440px;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+}

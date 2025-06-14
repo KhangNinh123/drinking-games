@@ -75,4 +75,75 @@ document.addEventListener('DOMContentLoaded', function() {
     if (modal) {
         observer.observe(modal, { attributes: true });
     }
+
+    const charImage = document.querySelector('.char-animation');
+    if (charImage) {
+        setTimeout(() => {
+            charImage.classList.add('fade-complete');
+        }, 3000); // Đợi fade hoàn thành
+    }
 });
+
+// Render 50 slides cho Swiper
+const swiperWrapper = document.querySelector('#swiper-cards .swiper-wrapper');
+const CARD_COUNT = 50;
+if (swiperWrapper && swiperWrapper.children.length === 0) {
+  for (let i = 0; i < CARD_COUNT; i++) {
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide flex items-center justify-center';
+    const img = document.createElement('img');
+    img.src = '../public/card.jpg';
+    img.style.width = '325px';
+    img.style.height = '440px';
+    img.style.objectFit = 'contain';
+    img.style.borderRadius = '18px';
+    img.style.boxShadow = '0 4px 32px rgba(0,0,0,0.18)';
+    slide.appendChild(img);
+    swiperWrapper.appendChild(slide);
+  }
+}
+
+// Khởi tạo Swiper Coverflow
+let swiperInstance = null;
+function initSwiper() {
+  if (swiperInstance) return;
+  swiperInstance = new Swiper('#swiper-cards', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    loop: true,
+    coverflowEffect: {
+      rotate: 40,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: true,
+    },
+    autoplay: {
+      delay: 1200,
+      disableOnInteraction: false,
+    },
+  });
+}
+
+// Khi modal hiện, hiện Swiper
+const modal = document.getElementById('modal-bg');
+const cardSlider = document.getElementById('card-slider');
+const modalObserver = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.attributeName === 'class') {
+      if (modal.classList.contains('active')) {
+        cardSlider.classList.remove('hidden');
+        initSwiper();
+        if (swiperInstance) swiperInstance.autoplay.start();
+      } else {
+        cardSlider.classList.add('hidden');
+        if (swiperInstance) swiperInstance.autoplay.stop();
+      }
+    }
+  });
+});
+if (modal) {
+  modalObserver.observe(modal, { attributes: true });
+}
