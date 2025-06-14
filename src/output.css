@@ -627,6 +627,14 @@ video {
   width: 100%;
 }
 
+.w-\[880px\] {
+  width: 880px;
+}
+
+.w-\[800px\] {
+  width: 800px;
+}
+
 .-translate-x-\[10px\] {
   --tw-translate-x: -10px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -787,8 +795,6 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  /* Lớp phủ đen mờ */
   z-index: 1;
 }
 
