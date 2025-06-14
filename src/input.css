@@ -33,19 +33,13 @@ body {
 
 }
 body::before {
-    content: '    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Lớp phủ đen mờ */
     z-index: 1;
+    content: '';
 }
 
 /* Nội dung chính */
@@ -78,10 +72,10 @@ p {
 
 .corner-art {
     position: fixed;
-    right: 500px;
+    right: 380px;
     bottom: 80px;
     z-index: 10;
-    width: 450px;
+    width: 337.5px;
     pointer-events: auto;
     transition: opacity 0.2s;
 }
@@ -93,7 +87,7 @@ p {
     right: 20px;
     bottom: 80px;
     z-index: 10;
-    width: 540px;
+    width: 405px;
     pointer-events: auto;
     transition: opacity 0.2s;
 }
