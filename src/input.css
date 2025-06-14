@@ -30,12 +30,7 @@ body {
   background-image: url('../public/bg.png');;
     background-size: cover;
     font-family: '1FTV-Designer', Arial, sans-serif;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
+
 }
 body::before {
     content: '';

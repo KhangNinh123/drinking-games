@@ -619,20 +619,12 @@ video {
   width: 720px;
 }
 
-.w-\[860px\] {
-  width: 860px;
-}
-
-.w-full {
-  width: 100%;
-}
-
 .w-\[880px\] {
   width: 880px;
 }
 
-.w-\[800px\] {
-  width: 800px;
+.w-full {
+  width: 100%;
 }
 
 .-translate-x-\[10px\] {
@@ -692,6 +684,20 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
 }
 
 .drop-shadow-lg {
@@ -780,12 +786,6 @@ body {
   background-image: url('../public/bg.png');
   background-size: cover;
   font-family: '1FTV-Designer', Arial, sans-serif;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
 }
 
 body::before {
