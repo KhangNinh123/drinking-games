@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('bg-sg-overlay').classList.remove('active');
             document.getElementById('bg-vt-overlay').classList.remove('active');
             document.querySelector('.modal-desc').style.opacity = 0;
+            // Ẩn luôn slider 3D khi modal đóng
+            document.getElementById('card-slider').classList.add('hidden');
         }
     };
     // Thêm sự kiện click cho icon cart
@@ -58,5 +60,19 @@ document.addEventListener('DOMContentLoaded', function() {
         cartImg.addEventListener('click', function() {
             window.open('https://shopee.vn/masoi.vn?categoryId=100639&entryPoint=ShopByPDP&itemId=23668389652', '_blank');
         });
+    }
+    // Đảm bảo slider 3D luôn ẩn khi modal bị ẩn
+    const modal = document.getElementById('modal-bg');
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'class') {
+                if (!modal.classList.contains('active')) {
+                    document.getElementById('card-slider').classList.add('hidden');
+                }
+            }
+        });
+    });
+    if (modal) {
+        observer.observe(modal, { attributes: true });
     }
 });
