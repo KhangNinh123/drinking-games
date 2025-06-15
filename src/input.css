@@ -16,6 +16,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('../public/font/Roboto-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .font-1ftv {
   font-family: '1FTV-Designer', Arial, sans-serif;
 }
@@ -24,13 +31,15 @@
   font-family: 'FVF Fernando 08', Arial, sans-serif;
 }
 
+.font-roboto {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
 body {
  
   height: 100vh;
-  background-image: url('../public/bg.png');;
-    background-size: cover;
-    font-family: '1FTV-Designer', Arial, sans-serif;
-
+  background-image: url('../public/bg.png');
+  background-size: cover;
 }
 body::before {
     position: absolute;
