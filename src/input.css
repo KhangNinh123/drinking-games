@@ -299,16 +299,17 @@ p {
 /* Card slider styles */
 .card-slider {
     position: fixed;
-    right: 240px;
-    top: 50%;
+    right: 115px;
+    top: 35%;
     transform: translateY(-50%);
     z-index: 1100;
-    width: 330px;
-    height: 440px;
+    width: 540px;
+    height: 375px;
     display: flex;
     align-items: center;
     justify-content: center;
     pointer-events: none;
+    overflow: hidden;
 }
 
 .card-slider.hidden {
@@ -319,6 +320,17 @@ p {
     width: 325px;
     height: 440px;
     object-fit: contain;
-    border-radius: 18px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    box-shadow: none !important;
+    filter: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.swiper-pagination {
+    display: none !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: none !important;
 }

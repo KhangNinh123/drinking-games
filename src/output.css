@@ -795,8 +795,8 @@ video {
   text-align: left;
 }
 
-.text-center {
-  text-align: center;
+.text-\[10px\] {
+  font-size: 10px;
 }
 
 .text-sm {
@@ -809,17 +809,13 @@ video {
   line-height: 1.75rem;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.text-\[10px\] {
-  font-size: 10px;
-}
-
 .font-bold {
   font-weight: 700;
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 
 .text-red-500 {
@@ -830,11 +826,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 
 .drop-shadow-lg {
@@ -1250,16 +1241,17 @@ p {
 
 .card-slider {
   position: fixed;
-  right: 240px;
-  top: 50%;
+  right: 115px;
+  top: 35%;
   transform: translateY(-50%);
   z-index: 1100;
-  width: 330px;
-  height: 440px;
+  width: 540px;
+  height: 375px;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .card-slider.hidden {
@@ -1271,8 +1263,19 @@ p {
   height: 440px;
   -o-object-fit: contain;
      object-fit: contain;
-  border-radius: 18px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  box-shadow: none !important;
+  filter: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.swiper-pagination {
+  display: none !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
 }
 
 .hover\:scale-110:hover {

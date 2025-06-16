@@ -108,21 +108,21 @@ let swiperInstance = null;
 function initSwiper() {
   if (swiperInstance) return;
   swiperInstance = new Swiper('#swiper-cards', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
+    slidesPerView: 3,
+    spaceBetween: 6,
+    centeredSlides: false,
     loop: true,
-    coverflowEffect: {
-      rotate: 40,
-      stretch: 0,
-      depth: 200,
-      modifier: 1,
-      slideShadows: true,
-    },
     autoplay: {
-      delay: 1200,
+      delay: 3000,
       disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 }
