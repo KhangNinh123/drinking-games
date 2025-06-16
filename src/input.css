@@ -39,7 +39,7 @@ body {
  
   height: 100vh;
   background-image: url('../public/bg.png');
-  background-size: cover;
+    background-size: cover;
 }
 body::before {
     position: absolute;
